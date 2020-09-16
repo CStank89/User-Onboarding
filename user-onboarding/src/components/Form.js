@@ -1,22 +1,40 @@
 import React from 'react'
 
-const Form = () => {
+const Form = (props) => {
+    const { name, email, password } = props 
+    
+    
+    const onSubmit = evt => {
+        evt.preventDefault()
+      }
+
+
+
+
     return (
         <div>
-             
+        
             <input 
             type='text'
-            placeholder='name'/>
+            value={name}
+            placeholder='name'
+            onChange={onChange}/>
             <input 
             type='text'
-            placeholder='email'/>
+            value={email}
+            placeholder='email'
+            onChange={onChange}/>
             <input 
             type='text'
-            placeholder='password'/>
+            value={password}
+            placeholder='password'
+            onChange={onChange}/>
             <input
-            type='checkbox' />
-
-            <button>Submit</button>
+            type='checkbox' 
+            checked={true} />
+            <button
+             onSubmit={onSubmit}
+            >Submit</button>
         </div>
     )
 }
